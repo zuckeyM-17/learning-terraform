@@ -130,6 +130,14 @@ resource "aws_lb_target_group" "asg" {
   }
 }
 
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "terraform-up-and-running-state"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
 output "alb_dns_name" {
   value     = aws_lb.example.dns_name
   description = "The domain name of the load balancer"
