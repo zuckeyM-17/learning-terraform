@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "terraform-up-and-running-state-zuckey-learning"
-    key    = "global/s3/terraform.tfstate"
+    key    = "workspace-example/terraform.tfstate"
     region = "ap-northeast-1"
     dynamodb_table = "terraform-up-and-running-lock"
     encrypt = true
