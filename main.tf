@@ -1,11 +1,11 @@
 terraform {
-  backend "s3" {
-    bucket = "terraform-up-and-running-state-zuckey-learning"
-    key    = "workspace-example/terraform.tfstate"
-    region = "ap-northeast-1"
-    dynamodb_table = "terraform-up-and-running-lock"
-    encrypt = true
-  }
+  # backend "s3" {
+  #   bucket = "terraform-up-and-running-state-zuckey-learning"
+  #   key    = "workspace-example/terraform.tfstate"
+  #   region = "ap-northeast-1"
+  #   dynamodb_table = "terraform-up-and-running-lock"
+  #   encrypt = true
+  # }
 }
 
 variable "server_port" {
@@ -142,9 +142,9 @@ resource "aws_lb_target_group" "asg" {
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "terraform-up-and-running-state-zuckey-learning"
 
-  lifecycle {
-    prevent_destroy = true
-  }
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
 }
 
 resource "aws_s3_bucket_versioning" "enabled" {
